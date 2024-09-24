@@ -1,4 +1,4 @@
-Werkzeug
+werkzeug
 aiohttp
 beautifulsoup4
 hachoir
