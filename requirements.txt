@@ -1,4 +1,5 @@
-werkzeug
+Flask>=2.3,<3.0
+Werkzeug>=2.2,<3.0
 aiohttp
 beautifulsoup4
 hachoir
@@ -12,5 +13,4 @@ olefile
 lk21
 filetype
 tldextract
-Flask==2.2.2
 gunicorn==20.1.0
