@@ -75,7 +75,7 @@ async def start(bot, update):
                     [InlineKeyboardButton("🦋 ⭑┗━━┫⦀⦙ O W N E R ⦙⦀┣━━┛⭑ 🦋", url="https://t.me/LazyDeveloperr")],
                 ]
             ),
-            reply_to_message_id=update.message_id
+            reply_to_message_id=update.id
         )
     else:
         # logger.info(update) ==         
