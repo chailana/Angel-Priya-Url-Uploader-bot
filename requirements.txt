@@ -14,3 +14,4 @@ lk21
 filetype
 tldextract
 gunicorn==20.1.0
+ffmpeg-python
