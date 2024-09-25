@@ -12,9 +12,9 @@ class Config(object):
     # the download location, where the HTTP Server runs
     DOWNLOAD_LOCATION = "./DOWNLOADS"
     # Telegram maximum file upload size
-    MAX_FILE_SIZE = 50000000000
-    TG_MAX_FILE_SIZE = 209715200000
-    FREE_USER_MAX_FILE_SIZE = 5000000000
+    MAX_FILE_SIZE = 500000000000000000
+    TG_MAX_FILE_SIZE = 20971520000000000000
+    FREE_USER_MAX_FILE_SIZE = 50000000000000000
     # chunk size that should be used with requests
     CHUNK_SIZE = int(os.environ.get("CHUNK_SIZE", 128))
     # default thumbnail to be used in the videos
