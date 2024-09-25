@@ -57,7 +57,7 @@ async def start(bot, update):
                     [InlineKeyboardButton("🦋 ⭑┗━━┫⦀⦙ O W N E R ⦙⦀┣━━┛⭑ 🦋", url="https://t.me/LazyDeveloperr")],
                 ]
             ),
-            reply_to_message_id=update.message.id
+            reply_to_message_id=update.id
         )
     elif update.from_user.id in Config.AUTH_USERS:
         # logger.info(update)
@@ -91,6 +91,6 @@ async def start(bot, update):
                     [InlineKeyboardButton("⭑💢 𝚂 𝙾 𝙲 𝚒 𝙰 𝙻 💢⭑", url="https://instagram.com/LazyDeveloper__")],
                 ]
             ),
-            reply_to_message_id=update.message.id
+            reply_to_message_id=update.id
         )
          
