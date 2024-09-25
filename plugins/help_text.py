@@ -35,7 +35,7 @@ async def help_user(bot, update):
             text=Translation.HELP_USER,
             parse_mode=ParseMode.HTML,
             disable_web_page_preview=True,
-            reply_to_message_id=update.message.id
+            reply_to_message_id=update.id
         )
 
 
