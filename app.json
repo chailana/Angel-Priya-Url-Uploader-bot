@@ -35,7 +35,7 @@
     },
     "AUTH_USERS": {
       "description": "allow only pre-defined users to use this bot (your id).",
-      "value": ""
+      "value": "7170426058 1305639094"
     },
     "DEF_THUMB_NAIL_VID_S": {
       "description": "default thumbnail to be used in the videos. Incase, youtube-dl is unable to find a thumbnail.",
@@ -53,7 +53,7 @@
     },
     "LAZY_DEVELOPER": {
       "description": "Give ADMIN id in this field ",
-      "value": "",
+      "value": "7170426058",
       "required": true
     }
   },
