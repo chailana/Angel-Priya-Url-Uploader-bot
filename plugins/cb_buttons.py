@@ -118,7 +118,7 @@ async def button(bot, update):
                 await bot.edit_message_text(
                     chat_id=update.message.chat.id,
                     text=Translation.ZIP_UPLOADED_STR.format("1", "0"),
-                    message_id=update.id
+                    message_id=update.message.id
                 )
         elif "|" in cb_data:
             await youtube_dl_call_back(bot, update)
