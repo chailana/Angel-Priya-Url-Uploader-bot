@@ -61,7 +61,7 @@ async def button(bot, update):
                 await bot.edit_message_text(
                     chat_id=update.message.chat.id,
                     text=Translation.CANCEL_STR,
-                    message_id=update.id
+                    message_id=update.message.id
                 )
             elif index_extractor == "ALL":
                 i = 0
@@ -91,7 +91,7 @@ async def button(bot, update):
                 await bot.edit_message_text(
                     chat_id=update.message.chat.id,
                     text=Translation.ZIP_UPLOADED_STR.format(i, "0"),
-                    message_id=update.id
+                    message_id=update.message.id
                 )
             else:
                 file_content = zip_file_contents[int(index_extractor)]
