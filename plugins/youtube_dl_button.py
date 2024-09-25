@@ -175,24 +175,31 @@ async def youtube_dl_call_back(bot, update):
         return False
     if t_response:
         # logger.info(t_response)
-        #os.remove(save_ytdl_json_path)
-        end_one = datetime.now()
-        time_taken_for_download = (end_one -start).seconds
-        file_size = Config.TG_MAX_FILE_SIZE + 1
-        try:
-            file_size = os.stat(download_directory).st_size
-        except FileNotFoundError as exc:
-            download_directory = os.path.splitext(download_directory)[0] + "." + "mkv"
-            # https://stackoverflow.com/a/678242/4723940
-            file_size = os.stat(download_directory).st_size
-        if file_size > Config.TG_MAX_FILE_SIZE:
-            await bot.edit_message_text(
-                chat_id=update.message.chat.id,
-                text=Translation.RCHD_TG_API_LIMIT.format(time_taken_for_download, humanbytes(file_size)),
-                message_id=update.message.id
-            )
-        else:
-            is_w_f = False
+        if t_response:
+    if os.path.exists(save_ytdl_json_path):
+        os.remove(save_ytdl_json_path)
+    else:
+        logger.warning(f"{save_ytdl_json_path} does not exist, unable to remove.")
+    
+    end_one = datetime.now()
+    time_taken_for_download = (end_one - start).seconds
+    
+    file_size = Config.TG_MAX_FILE_SIZE + 1
+    try:
+        file_size = os.stat(download_directory).st_size
+    except FileNotFoundError:
+        download_directory = os.path.splitext(download_directory)[0] + ".mkv"
+        file_size = os.stat(download_directory).st_size
+    
+    logger.info(f"Download completed in {time_taken_for_download} seconds, file size: {humanbytes(file_size)}")
+
+    if file_size > Config.TG_MAX_FILE_SIZE:
+        await bot.edit_message_text(
+            chat_id=update.message.chat.id,
+            text=Translation.RCHD_TG_API_LIMIT.format(time_taken_for_download, humanbytes(file_size)),
+            message_id=update.message.id
+        )
+      is_w_f = False
             images = await generate_screen_shots(
                 download_directory,
                 tmp_directory_for_each_user,
